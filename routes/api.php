@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('makePoint', [App\Http\Controllers\PontoController::class, 'batePonto'])->name('batePonto');
+Route::put('updatePoint/{id_ponto}', [App\Http\Controllers\PontoController::class, 'atualizaPonto'])->name('atualizaPonto');
+Route::get('TodayPoints', [App\Http\Controllers\PontoController::class, 'getPontosHoje'])->name('getPontosHoje');
+Route::get('monthPoints/{mes}', [App\Http\Controllers\PontoController::class, 'getPontosDoMes'])->name('getPontoMes');

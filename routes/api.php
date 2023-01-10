@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('makePoint', [App\Http\Controllers\PontoController::class, 'batePonto'])->name('batePonto');
+Route::post('makePointNow', [App\Http\Controllers\PontoController::class, 'batePonto'])->name('batePonto');
 Route::put('updatePoint/{id_ponto}', [App\Http\Controllers\PontoController::class, 'atualizaPonto'])->name('atualizaPonto');
 Route::get('TodayPoints', [App\Http\Controllers\PontoController::class, 'getPontosHoje'])->name('getPontosHoje');
 Route::get('monthPoints/{mes}', [App\Http\Controllers\PontoController::class, 'getPontosDoMes'])->name('getPontoMes');
+Route::post('addPoint', [App\Http\Controllers\PontoController::class, 'addPonto'])->name('addPoint');
